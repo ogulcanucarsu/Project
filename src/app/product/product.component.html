@@ -1,0 +1,33 @@
+<p>
+ {{ title }}
+
+</p>
+
+<div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="filterText" placeholder="Textini giriniz">
+</div>
+
+<div class="form-group" *ngIf="filterText">
+   <label>Aradığınız değer:  <strong> {{filterText}} </strong></label>
+</div>
+
+<table class="table table-responsive"> 
+
+    <thead>
+        <th> Product Id </th>
+        <th> Cetagory Id </th>
+        <th> Product Name  </th>
+        <th> Unit Price  </th>
+        <th> Units In Stock  </th>
+    </thead>
+
+    <tr *ngFor="let item of products | productsfilter:filterText">
+        
+        <td>{{item.protuctId}}</td>
+        <td>{{item.productName | uppercase}}</td>
+        <td>{{item.categoryId}}</td>
+        <td>{{item.unitPrice | currency:'USD': true:'1.2-2'}}</td>
+        <td>{{item.unitsInStock}}</td>
+
+    </tr>
+</table>

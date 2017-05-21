@@ -1,0 +1,19 @@
+<table class="table">
+
+
+	<thead>
+
+		<th>Id</th>
+		<th>User Id</th>
+		<th>Title</th>
+		<th>Completed</th>
+	</thead>
+  <tr *ngFor="let item of todos">
+
+  <td> {{item.id}} </td>
+   <td> {{item.userId}} </td>
+    <td> {{item.title}} </td>
+     <td> {{item.completed}} </td>
+</tr>
+
+</table>
